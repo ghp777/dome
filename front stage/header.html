@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>头部</title>
+    <meta charset="utf-8">
+
+    <script src="../jquery.min.js"></script>
+    <script src="../compiled/flipclock.js"></script>
+    <link rel="stylesheet" href="../compiled/flipclock.css">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            /*border: 1px solid red;*/
+        }
+        
+        header {
+            width: 1024px;
+            height: 130px;
+            margin: 0 auto;
+            background-image: url("../images/h_bg.jpg");
+        }
+        
+        .nav_1 {
+            width: 450px;
+            height: 20px;
+            float: right;
+            padding-top: 15px;
+        }
+        
+        .nav_1 ul li {
+            list-style-type: none;
+            float: left;
+            font-size: 12px;
+            line-height: 20px;
+        }
+        
+        .nav_1 ul li a {
+            text-decoration: none;
+            padding-right: 15px;
+            color: black;
+        }
+        
+        .nav_1 ul li a:hover {
+            color: orange;
+        }
+        
+        .shopping_car {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: -4px -4px;
+            width: 23px;
+            height: 20px;
+        }
+        
+        .help {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: -44px -2px;
+            width: 24px;
+            height: 22px;
+            margin-top: -2px;
+        }
+        
+        .store {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: -90px -4px;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .index {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: -133px -5px;
+            width: 16px;
+            height: 17px;
+            margin-top: 2px;
+        }
+        
+        .login {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: -2px -29px;
+            width: 41px;
+            height: 18px;
+        }
+        
+        #login {
+            margin-left: -32px;
+        }
+        
+        .reg {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: -2px -29px;
+            width: 41px;
+            height: 18px;
+        }
+        
+        #reg {
+            margin-left: -32px;
+        }
+        
+        .welcome {
+            clear: both;
+            width: 500px;
+            height: 12px;
+            font-size: 12px;
+            letter-spacing: 5px;
+            float: right;
+            padding-top: 45px;
+            position: relative;
+        }
+        
+        .nav_2 {
+            clear: both;
+            width: 1024px;
+            height: 33px;
+            margin: 20px;
+            padding-top: 6px;
+        }
+        
+        .nav_2 ul li {
+            float: left;
+            width: 84px;
+            line-height: 32px;
+            list-style-type: none;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .nav_2 ul li a {
+            color: black;
+        }
+        
+        .nav_2 ul li a:link {
+            text-decoration: none;
+        }
+        
+        .nav_2 ul li a:hover {
+            background-image: url("../images/nav_bg.gif");
+            padding: 8px;
+        }
+    </style>
+    <script type="text/javascript">
+    </script>
+    <script src="../jquery.js"></script>
+</head>
+
+<body style="overflow:-Scroll;overflow-x:hidden;overflow-y:hidden">
+    <header>
+        <nav class="nav_1">
+            <ul>
+                <li class="shopping_car"></li>
+                <li><a href="shopping_car.html" target="_top">购物车</a></li>
+                <li class="help"></li>
+                <li><a href="help.html" target="_top">帮助中心</a></li>
+                <li class="store"></li>
+                <li><a href="#">加入收藏</a></li>
+                <li class="index"></li>
+                <li><a href="#">设为首页</a></li>
+                <li class="login"></li>
+                <li id="login"><a href="login.html" target="_top">登录</a></li>
+                <li class="reg"></li>
+                <li id="reg"><a href="register.html" target="_top">注册</a></li>
+            </ul>
+        </nav>
+        <section class="welcome"><span id="time" style="margin: 0 -60px;">你好，欢迎访问贵美商城！</span></section>
+        <nav class="nav_2">
+            <ul id="text">
+                <li><a href="index.html" target="_top"><b>首&nbsp;&nbsp;页</b></a></li>
+                <li><a href="#"><b>家用电器</b></a></li>
+                <li><a href="#"><b>手机数码</b></a></li>
+                <li><a href="#"><b>日用百货</b></a></li>
+                <li><a href="#"><b>书&nbsp;&nbsp;籍</b></a></li>
+                <li><a href="#"><b>帮助中心</b></a></li>
+                <li><a href="#"><b>免费开店</b></a></li>
+                <li><a href="#"><b>全球咨询</b></a></li>
+            </ul>
+        </nav>
+        <div class="clock"></div>
+        <script src="../compiled/flipclock.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                clock = $('.clock').FlipClock({
+                    clockFace: 'TwentyFourHourClock'
+                });
+            });
+            // var clock = $('.your-clock').FlipClock({
+
+            // });
+            // getTime()
+
+            // var clock = new FlipClock($('.your-clock'), {
+            //     // ... your options here
+            // });
+
+            // clock.getTime(function() {
+            //     // this (optional) callback will fire each time the clock flips
+            // });
+        </script>
+    </header>
+
+    <script>
+        $(function() {
+
+            $("#text li").mouseenter(function() {
+                $(this).animate({
+                    "fontSize": "16px"
+                }, 300)
+            })
+
+            $("#text li").mouseleave(function() {
+                $(this).animate({
+                    "fontSize": "10px"
+                }, 300)
+            })
+
+
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

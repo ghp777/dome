@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>贵美商城</title>
+    <meta charset=utf-8>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            /*border: 1px solid red;*/
+        }
+        
+        iframe {
+            border: none;
+        }
+        
+        #adv1 {
+            position: fixed;
+            top: 190px;
+            z-index: 2;
+        }
+        
+        #adv2 {
+            position: fixed;
+            top: 190px;
+            right: 0;
+            z-index: 2;
+        }
+        
+        #close1 {
+            position: fixed;
+            left: 86px;
+            z-index: 3;
+        }
+        
+        #close2 {
+            position: fixed;
+            right: 114px;
+            z-index: 3;
+        }
+        
+        .header {
+            width: 1081px;
+            height: 151px;
+        }
+        
+        #header {
+            width: 1081px;
+            height: 151px;
+            margin: 0 auto;
+        }
+        
+        .main {
+            width: 978px;
+            height: 645px;
+            margin: -13px auto;
+        }
+        
+        .main_left {
+            width: 199px;
+            height: 637px;
+            background-image: url("../images/bg.gif");
+            background-position: 0 -6px;
+            float: left;
+        }
+        
+        .main_left ul {
+            margin-top: 38px;
+            margin-left: 15px;
+        }
+        
+        .main_left ul li {
+            list-style-type: none;
+            font-size: 12px;
+            float: left;
+            width: 58px;
+            height: 24px;
+        }
+        
+        #title1 {
+            width: 180px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ff7300;
+            height: 27px;
+        }
+        
+        #title2 {
+            width: 180px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ff7300;
+            height: 27px;
+        }
+        
+        #title3 {
+            width: 180px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ff7300;
+            height: 27px;
+        }
+        
+        #title4 {
+            width: 180px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ff7300;
+            height: 27px;
+        }
+        
+        .main_left ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .main_left ul li a:hover {
+            color: orange;
+        }
+        
+        .main_center {
+            width: 400px;
+            height: 637px;
+            float: left;
+            margin-left: 10px;
+        }
+        /* 自己另外添加的css------------------------------------------- */
+        
+        .main_show_box {
+            width: 526px;
+            /* border: 1px solid green;  */
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .main_show {
+            overflow: hidden;
+            width: 2120px;
+            /* border: 1px solid black; */
+            margin-left: 0px;
+        }
+        
+        #img_one {
+            background-image: url("../images/ad-01.jpg");
+            width: 524px;
+            height: 190px;
+            display: inline-block;
+            /* border: 1px solid red; */
+        }
+        
+        #img_two {
+            background-image: url("../images/ad-02.jpg");
+            width: 524px;
+            height: 190px;
+            display: inline-block;
+            /* border: 1px solid red; */
+        }
+        
+        #img_three {
+            background-image: url("../images/ad-03.jpg");
+            width: 524px;
+            height: 190px;
+            display: inline-block;
+            /* border: 1px solid red; */
+        }
+        
+        #img_four {
+            background-image: url("../images/ad-04.jpg");
+            width: 524px;
+            height: 190px;
+            display: inline-block;
+            /* border: 1px solid red; */
+        }
+        /* ----------------------------------------------------- */
+        
+        .main_center_bottom {
+            width: 524px;
+            height: 440px;
+            background-image: url("../images/bg.gif");
+            background-position: -213px -203px;
+            margin-top: 8px;
+        }
+        
+        .main_center_bottom dl {
+            float: left;
+            margin-top: 35px;
+        }
+        
+        .main_center_bottom dl dt {
+            border: 1px solid gray;
+            margin-left: 38px;
+        }
+        
+        .pic1 {
+            width: 99px;
+            height: 71px;
+        }
+        
+        .pic2 {
+            width: 86px;
+            height: 68px;
+            margin-left: 43px;
+        }
+        
+        .pic3 {
+            width: 114px;
+            height: 71px;
+        }
+        
+        .pic4 {
+            width: 101px;
+            height: 80px;
+        }
+        
+        .pic5 {
+            width: 106px;
+            height: 81px;
+        }
+        
+        .pic6 {
+            width: 114px;
+            height: 89px;
+            margin-left: 30px;
+        }
+        
+        .pic7 {
+            width: 104px;
+            height: 82px;
+        }
+        
+        .pic8 {
+            width: 104px;
+            height: 89px;
+            margin-left: 35px;
+        }
+        
+        #pic9 {
+            width: 133px;
+            height: 77px;
+            margin-left: 22px;
+        }
+        
+        .main_center_bottom dl dd {
+            width: 168px;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-bottom: -20px;
+        }
+        
+        .main_center_bottom dl dd a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .main_center_bottom dl dd a:hover {
+            color: orange;
+        }
+        
+        .main_right {
+            width: 233px;
+            height: 637px;
+            float: right;
+        }
+        
+        .main_right_top {
+            background-image: url("../images/bg(4).gif");
+            width: 233px;
+            height: 129px;
+        }
+        
+        .tr {
+            height: 30px;
+        }
+        
+        .main_right_top table tr td {
+            line-height: 9px;
+        }
+        
+        .td {
+            width: 6px;
+        }
+        
+        .main_right_top table tr td a {
+            font-size: 12px;
+            text-decoration: none;
+            height: 12px;
+            color: black;
+        }
+        
+        .main_right_top table tr td a:hover {
+            color: orange;
+        }
+        
+        .main_right_center {
+            background-image: url("../images/bg%20(3).gif");
+            background-repeat: no-repeat;
+            width: 233px;
+            height: 294px;
+            margin-top: 8px;
+            padding-left: 6px;
+        }
+        
+        .main_right_center ul {
+            height: 32px;
+        }
+        
+        .main_right_center dl {
+            margin: 10px;
+        }
+        
+        .main_right_center dl dt {
+            width: 53px;
+            height: 50px;
+            border: 1px solid gray;
+            float: left;
+            margin-right: 10px;
+        }
+        
+        .main_right_center dl dd {
+            font-size: 12px;
+            line-height: 50px;
+        }
+        
+        .main_right_center dl dd a {
+            color: black;
+        }
+        
+        .main_right_center dl dd a:link {
+            text-decoration: none;
+        }
+        
+        .main_right_center dl dd a:hover {
+            color: orange;
+        }
+        
+        .main_right_bottom {
+            margin-top: 4px;
+        }
+        
+        .main_right_bottom img {
+            border: 0;
+        }
+        
+        .main_right_bottom table {
+            border-spacing: 0;
+        }
+        
+        .main_right_bottom table tr td {
+            padding: 0;
+        }
+        
+        .footer {
+            width: 986px;
+            height: 150px;
+        }
+        
+        #footer {
+            width: 986px;
+            height: 150px;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="../jquery.js"></script>
+
+</head>
+
+<body>
+    <section id="adv1"><img src="../images/list1.jpg"><img id="close1" src="../images/close.gif"></section>
+    <section id="adv2"><img src="../images/list2.jpg"><img id="close2" src="../images/close.gif"></section>
+    <section id="header"><iframe class="header" src="header.html"></iframe></section>
+    <section class="main">
+        <section class="main_left">
+            <ul>
+                <li id="title1">家用电器</li>
+                <li><a href="electronic_products.html" target="_top">大家电</a></li>
+                <li><a href="electronic_products.html" target="_top">洗衣机</a></li>
+                <li><a href="electronic_products.html" target="_top">平板电视</a></li>
+                <li><a href="electronic_products.html" target="_top">电热水器</a></li>
+                <li><a href="electronic_products.html" target="_top">家庭音响</a></li>
+                <li><a href="electronic_products.html" target="_top">热水器</a></li>
+                <li><a href="electronic_products.html" target="_top">空调冰箱</a></li>
+                <li><a href="electronic_products.html" target="_top">冰柜</a></li>
+                <li><a href="electronic_products.html" target="_top">DVD</a></li>
+                <li><a href="electronic_products.html" target="_top">电视附件</a></li>
+                <li><a href="electronic_products.html" target="_top">电燃气</a></li>
+                <li><a href="electronic_products.html" target="_top">家电下乡</a></li>
+                <li><a href="electronic_products.html" target="_top">家电服务</a></li>
+                <li><a href="electronic_products.html" target="_top">电饭煲</a></li>
+                <li><a href="electronic_products.html" target="_top">摄像机</a></li>
+                <li id="title2">书籍</li>
+                <li><a href="electronic_products.html" target="_top">大家电</a></li>
+                <li><a href="electronic_products.html" target="_top">洗衣机</a></li>
+                <li><a href="electronic_products.html" target="_top">平板电视</a></li>
+                <li><a href="electronic_products.html" target="_top">电热水器</a></li>
+                <li><a href="electronic_products.html" target="_top">家庭音响</a></li>
+                <li><a href="electronic_products.html" target="_top">热水器</a></li>
+                <li><a href="electronic_products.html" target="_top">空调冰箱</a></li>
+                <li><a href="electronic_products.html" target="_top">冰柜</a></li>
+                <li><a href="electronic_products.html" target="_top">DVD</a></li>
+                <li><a href="electronic_products.html" target="_top">电视附件</a></li>
+                <li><a href="electronic_products.html" target="_top">电燃气</a></li>
+                <li><a href="electronic_products.html" target="_top">家电下乡</a></li>
+                <li><a href="electronic_products.html" target="_top">家电服务</a></li>
+                <li><a href="electronic_products.html" target="_top">电饭煲</a></li>
+                <li><a href="electronic_products.html" target="_top">摄像机</a></li>
+                <li id="title3">手机数码</li>
+                <li><a href="electronic_products.html" target="_top">大家电</a></li>
+                <li><a href="electronic_products.html" target="_top">洗衣机</a></li>
+                <li><a href="electronic_products.html" target="_top">平板电视</a></li>
+                <li><a href="electronic_products.html" target="_top">电热水器</a></li>
+                <li><a href="electronic_products.html" target="_top">家庭音响</a></li>
+                <li><a href="electronic_products.html" target="_top">热水器</a></li>
+                <li><a href="electronic_products.html" target="_top">空调冰箱</a></li>
+                <li><a href="electronic_products.html" target="_top">冰柜</a></li>
+                <li><a href="electronic_products.html" target="_top">DVD</a></li>
+                <li><a href="electronic_products.html" target="_top">电视附件</a></li>
+                <li><a href="electronic_products.html" target="_top">电燃气</a></li>
+                <li><a href="electronic_products.html" target="_top">家电下乡</a></li>
+                <li><a href="electronic_products.html" target="_top">家电服务</a></li>
+                <li><a href="electronic_products.html" target="_top">电饭煲</a></li>
+                <li><a href="electronic_products.html" target="_top">摄像机</a></li>
+                <li id="title4">日用百货</li>
+                <li><a href="electronic_products.html" target="_top">大家电</a></li>
+                <li><a href="electronic_products.html" target="_top">洗衣机</a></li>
+                <li><a href="electronic_products.html" target="_top">平板电视</a></li>
+                <li><a href="electronic_products.html" target="_top">电热水器</a></li>
+                <li><a href="electronic_products.html" target="_top">家庭音响</a></li>
+                <li><a href="electronic_products.html" target="_top">热水器</a></li>
+                <li><a href="electronic_products.html" target="_top">空调冰箱</a></li>
+                <li><a href="electronic_products.html" target="_top">冰柜</a></li>
+                <li><a href="electronic_products.html" target="_top">DVD</a></li>
+                <li><a href="electronic_products.html" target="_top">电视附件</a></li>
+                <li><a href="electronic_products.html" target="_top">电燃气</a></li>
+                <li><a href="electronic_products.html" target="_top">家电下乡</a></li>
+                <li><a href="electronic_products.html" target="_top">家电服务</a></li>
+                <li><a href="electronic_products.html" target="_top">电饭煲</a></li>
+                <li><a href="electronic_products.html" target="_top">摄像机</a></li>
+            </ul>
+        </section>
+        <section class="main_center">
+            <div class="main_show_box">
+                <ul class="main_show">
+                    <li class="main_center_top" id="img_one"></li>
+                    <li class="main_center_top" id="img_two"></li>
+                    <li class="main_center_top" id="img_three"></li>
+                    <li class="main_center_top" id="img_four"></li>
+                </ul>
+            </div>
+
+            <section class="main_center_bottom">
+                <dl>
+                    <dt class="pic1"><img src="../images/promote-1.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">惠普商务移动应用英寸笔记本</a></dd>
+                </dl>
+                <dl>
+                    <dt class="pic2"><img src="../images/promote-2.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">夏新N6&nbsp;GPS真人语音导航手机<br/>超低特价疯抢&nbsp;数量有限！</a></dd>
+                </dl>
+                <dl>
+                    <dt class="pic3"><img src="../images/promote-3.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">三星家庭影院&nbsp;HT-TZ325&nbsp;购机送好礼（超值性价比）</a></dd>
+                </dl>
+                <dl>
+                    <dt class="pic4"><img src="../images/laser-pen.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">明基MP512投影机&nbsp;2899元&nbsp;送<br/>100元京卷&nbsp;SVGA&nbsp;2200流明</a></dd>
+                </dl>
+                <dl>
+                    <dt class="pic5"><img src="../images/mouse.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">罗技数据1TB移动鼠标729元开<br/>抢了！</a></dd>
+                </dl>
+                <dl>
+                    <dt class="pic6"><img src="../images/earphone.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">海森那尔极品耳机绝对不容错过！</a></dd>
+                </dl>
+                <dl>
+                    <dt class="pic7"><img src="../images/Wancom.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">亚马孙随时阅读，随时记录，时尚最佳选择！</a></dd>
+                </dl>
+                <dl>
+                    <dt class="pic8"><img src="../images/Frame.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">优雅相框</a></dd>
+                </dl>
+                <dl>
+                    <dt id="pic9"><img src="../images/notebook.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">IBM&nbsp;2009最新上网本，特色尽显</a></dd>
+                </dl>
+            </section>
+        </section>
+        <section class="main_right">
+            <section class="main_right_top">
+                <table>
+                    <tr class="tr">
+                        <tr>
+                            <tr>
+                                <td class="td" rowspan="4"></td>
+                                <td rowspan="4"><img src="../images/a_left.jpg" alt=""></td>
+                                <td><a href="goods_classify.html" target="_top">大学要求老师开网店</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="goods_classify.html" target="_top">安全锤网上大热销</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="goods_classify.html" target="_top">商城竟成网购试衣间</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="goods_classify.html" target="_top">2万网上开十家连锁店</a></td>
+                            </tr>
+                </table>
+            </section>
+            <section class="main_right_center">
+                <ul></ul>
+                <dl>
+                    <dt><img src="../images/show1.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">大牌狂降价，三折直送</a></dd>
+                </dl>
+                <dl>
+                    <dt><img src="../images/show2.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">大学要求老师开网店</a></dd>
+                </dl>
+                <dl>
+                    <dt><img src="../images/show5.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">黑眼圈推荐，美白不停</a></dd>
+                </dl>
+                <dl>
+                    <dt><img src="../images/show4.jpg" alt=""></dt>
+                    <dd><a href="goods_classify.html" target="_top">瘦身狂潮风，修形之选</a></dd>
+                </dl>
+            </section>
+            <section class="main_right_bottom">
+                <table>
+                    <tr>
+                        <td><img src="../images/left1.jpg" id="left1" alt="笔记本"><img src="../images/left2.jpg" id="left2" alt="笔记本" style="display: none" onmouseover="change(1)"></td>
+                        <td><img src="../images/right1.jpg" id="right1" alt="手机充值" onmouseover="change(2)"><img src="../images/right2.jpg" id="right2" alt="手机充值" style="display: none"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><img src="../images/end1.jpg" id="end1" alt="笔记本"><img src="../images/end2.jpg" id="end2" alt="手机充值" style="display: none"></td>
+                    </tr>
+                </table>
+            </section>
+        </section>
+    </section>
+    <section id="footer"><iframe class="footer" src="footer.html"></iframe></section>
+</body>
+<script type="text/javascript">
+    function change(param) {
+        if (param == 1) {
+            document.getElementById('left1').style.display = 'block';
+            document.getElementById('left2').style.display = 'none';
+            document.getElementById('right1').style.display = 'block';
+            document.getElementById('right2').style.display = 'none';
+            document.getElementById('end1').style.display = 'block';
+            document.getElementById('end2').style.display = 'none';
+        } else {
+            document.getElementById('left1').style.display = 'none';
+            document.getElementById('left2').style.display = 'block';
+            document.getElementById('right1').style.display = 'none';
+            document.getElementById('right2').style.display = 'block';
+            document.getElementById('end1').style.display = 'none';
+            document.getElementById('end2').style.display = 'block';
+        }
+    }
+    document.getElementById('close1').onclick = function() {
+        document.getElementById('adv1').style.display = 'none';
+    };
+    document.getElementById('close2').onclick = function() {
+        document.getElementById('adv2').style.display = 'none';
+    };
+</script>
+<script src="../js/Newindex.js"></script>
+
+</html>

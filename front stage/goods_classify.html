@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>商品分类页</title>
+    <meta charset="utf-8">
+    <script src="../jquery.js"></script>
+    <script src="../src/jquery.exzoom.js"></script>
+    <link rel="stylesheet" href="../src/jquery.exzoom.css">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            /*border: 1px solid red;*/
+        }
+        
+        iframe {
+            border: none;
+        }
+        
+        .header {
+            width: 1081px;
+            height: 151px;
+        }
+        
+        #header {
+            width: 1081px;
+            height: 151px;
+            margin: 0 auto;
+        }
+        
+        #small-img li {
+            border: 0;
+        }
+        
+        #small-img {
+            width: 2000px;
+        }
+        
+        #small-img li img {
+            width: 351px;
+            height: 264px;
+        }
+        
+        article {
+            text-align: center;
+            margin-top: -3px;
+            font-size: 14px;
+        }
+        
+        .main {
+            width: 978px;
+            height: 390px;
+            border-top: 1px solid gray;
+            margin: 10px auto;
+        }
+        
+        .main_left {
+            width: 351px;
+            height: 200px;
+            margin-top: 20px;
+            float: left;
+        }
+        
+        .main_left ul li {
+            list-style-type: none;
+        }
+        
+        .pic1 {
+            border: 1px solid gray;
+        }
+        
+        .pic2 {
+            float: left;
+            margin-top: 16px;
+            /* margin-right: 10px; */
+            border: 1px solid gray;
+        }
+        
+        .pic3 {
+            float: left;
+            margin-top: 5px;
+        }
+        
+        .main_right {
+            width: 350px;
+            height: 200px;
+            float: left;
+            margin-top: 15px;
+            margin-left: 40px;
+        }
+        
+        .main_right ul li {
+            list-style-type: none;
+            font-size: 13px;
+            height: 22px;
+            border-bottom: 1px dashed gray;
+            margin-top: 7px;
+        }
+        
+        #big_line {
+            height: 124px;
+            padding-top: 10px;
+        }
+        
+        .main_right ul li dl {
+            width: 350px;
+            height: 40px;
+            border: 1px solid burlywood;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .main_right ul li dl dt {
+            float: left;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+        
+        .main_right ul li dl dd {
+            margin-top: 5px;
+        }
+        
+        .main_right ul li dl dd a {
+            color: black;
+            text-decoration: none;
+        }
+        
+        .main_right ul li dl dd a:hover {
+            color: orange;
+        }
+        
+        .footer {
+            width: 986px;
+            height: 150px;
+        }
+        
+        #footer {
+            width: 986px;
+            height: 150px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header"><iframe class="header" src="header.html"></iframe></section>
+    <article><b>联想Y450A-TFO（NBA纪念版） 512独显超强性价比</b></article>
+    <section class="main">
+        <section class="main_left ">
+            <div class="exzoom" id="exzoom">
+                <div class="exzoom_img_box">
+
+                    <ul id="small-img" class="exzoom_img_ul">
+                        <li class="pic2 active">
+                            <img src="../images/show1_big.jpg">
+                        </li>
+                        <li class="pic2">
+                            <img src="../images/show2_big.jpg">
+                        </li>
+                        <li class="pic2">
+                            <img src="../images/show3_big.jpg">
+                        </li>
+                        <li class="pic2">
+                            <img src="../images/show4_big.jpg">
+                        </li>
+                        <li class="pic2">
+                            <img src="../images/show5_big.jpg">
+                        </li>
+                    </ul>
+                </div>
+                <div class="exzoom_nav"></div>
+            </div>
+
+            <script>
+                $("#exzoom").exzoom({
+                    "navBorder": 0, //列表边框，没有边框填写0，边框在css中修改
+                    autoPlay: false //是否自动播放
+                        // "navWidth": 60, //列表每个宽度,该版本中请把宽高填写成一样
+                        // "navHeight": 60, //列表每个高度,该版本中请把宽高填写成一样
+                        // "navItemNum": 5, //列表显示个数
+                        // "navItemMargin": 7, //列表间隔
+
+                });
+            </script>
+
+
+
+
+
+            <!-- <p class="exzoom_btn">
+                <a href="javascript:void(0);" class="exzoom_prev_btn">
+                    < </a>
+                        <a href="javascript:void(0);" class="exzoom_next_btn"> > </a>
+            </p> -->
+
+
+            <li style="list-style: none;" class="pic3"><img src="../images/share.gif"></li>
+            <li style="list-style: none;" class="pic3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/favthis.gif"></li>
+        </section>
+
+
+
+
+        <section class="main_right">
+            <ul>
+                <li>一&nbsp;口&nbsp;价：&nbsp;&nbsp;80.00元 </li>
+                <li>运&nbsp;&nbsp;&nbsp;&nbsp;费：&nbsp;&nbsp;免运费</li>
+                <li id="big_line">
+                    <a href="shopping_car.html"><img src="../images/button_buynow.gif"></a>
+                    <dl>
+                        <dt><img src="../images/onlinepay.gif"></dt>
+                        <dd>此商品支持<a href="#">网银支付</a>，网上汇款免手续费。<br/> 收货满意后出售者才能拿钱，货款都安全！
+                        </dd>
+                    </dl>
+                    剩余时间：&nbsp;&nbsp;10天23小时</li>
+                <li>本期售出：&nbsp;&nbsp;2件</li>
+                <li>累计售出：&nbsp;&nbsp;8件</li>
+                <li>商品类型：&nbsp;&nbsp;全新&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所&nbsp;在&nbsp;地：山西太原</li>
+                <li>商品数量：&nbsp;&nbsp;1件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏&nbsp;览&nbsp;量：17次</li>
+            </ul>
+        </section>
+    </section>
+    <section id="footer"><iframe class="footer" src="footer.html"></iframe></section>
+    <!-- <script src="../js/magnifying.js"></script> -->
+</body>
+
+</html>

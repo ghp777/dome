@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            
+            table {
+                margin: 0 auto;
+                /*width:100%;*/
+            }
+            
+            td,
+            th {
+                border: 1px solid #ccc;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>商品名</th>
+                    <th>单品积分</th>
+                    <th>市场价</th>
+                    <th>当当价</th>
+                    <th>数量</th>
+                    <th>删除</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>私募（首部披露资本博弈秘密的金融...</td>
+                    <td><label>189</label></td>
+                    <td>￥<label>32.00</label></td>
+                    <td>￥<label>18.90(59折)</label></td>
+                    <td><input type="text" value="1" onfocus="getOldCounts(this)" onchange="countThree(this)" /></label>
+                    </td>
+                    <td><a href="#" onclick="deleteRow(this)">删除</a></td>
+                </tr>
+                <tr>
+                    <td>小团圆（张爱玲最神秘小说遗稿）</td>
+                    <td><label>173</label></td>
+                    <td>￥<label>28.00</label></td>
+                    <td>￥<label>17.30(62折)</label></td>
+                    <td><input type="text" value="1" onfocus="getOldCounts(this)" onchange="countThree(this)" /></label>
+                    </td>
+                    <td><a href="#" onclick="deleteRow(this)">删除</a></td>
+                </tr>
+                <tr>
+                    <td>不抱怨的世界(畅销全球80国的世界...</td>
+                    <td><label>154</label></td>
+                    <td>￥<label>24.80</label></td>
+                    <td>￥<label>15.40(62折)</label></td>
+                    <td><input type="text" value="2" onfocus="getOldCounts(this)" onchange="countThree(this)" /></label>
+                    </td>
+                    <td><a href="#" onclick="deleteRow(this)">删除</a></td>
+                </tr>
+                <tr>
+                    <td>福玛特双桶洗衣机XPB20-07S</td>
+                    <td><label>358</label></td>
+                    <td>￥<label>458.00</label></td>
+                    <td>￥<label>358.00(78折))</label></td>
+                    <td><input type="text" value="1" onfocus="getOldCounts(this)" onchange="countThree(this)" /></label>
+                    </td>
+                    <td><a href="#" onclick="deleteRow(this)">删除</a></td>
+                </tr>
+                <tr>
+                    <td>PHP和MySQL Web开发(原书第4版）</td>
+                    <td><label>712</label></td>
+                    <td>￥<label>95.00</label></td>
+                    <td>￥<label>71.20(75折)</label></td>
+                    <td><input type="text" value="1" onfocus="getOldCounts(this)" onchange="countThree(this)" /></label>
+                    </td>
+                    <td><a href="#" onclick="deleteRow(this)">删除</a></td>
+                </tr>
+                <tr>
+                    <td>法布尔昆虫记（再买￥68.30即可参加“满199元减10元现金”活动）</td>
+                    <td><label>10</label></td>
+                    <td>￥<label>198.00</label></td>
+                    <td>￥<label>130.70(66折)</label></td>
+                    <td><input type="text" value="1" onfocus="getOldCounts(this)" onchange="countThree(this)" /></label>
+                    </td>
+                    <td><a href="#" onclick="deleteRow(this)">删除</a></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td></td>
+                <td></td>
+                <td>您共节省金额:￥<span id="save_money">233.7</span><br/> 可获商品积:
+                    <span id="shopping_scores">1750</span>
+                </td>
+                <td>商品金额总计:￥<span id="all_money">626.9</span></td>
+                <td></td>
+                <td></td>
+            </tfoot>
+        </table>
+        <script>
+            //原来的数量
+            var number = 0;
+
+            function getOldCounts(t) {
+                number = t.value;
+
+            }
+            //当商品的数量发生改变的时候，计算三个值
+            function countThree(t) {
+                var new_number = t.value;
+
+                var childs = t.parentNode.parentNode.children;
+
+                var jifen = parseInt(childs[1].firstElementChild.innerHTML);
+                var old_price = parseFloat(childs[2].firstElementChild.innerHTML);
+                var dangdang_price = parseFloat(childs[3].firstElementChild.innerHTML);
+
+
+
+
+
+                //获取原来的三个数值
+                var save_money = parseFloat(document.getElementById("save_money").innerText);
+                var shopping_score = parseInt(document.getElementById("shopping_scores").innerText);
+                var all_money = parseFloat(document.getElementById("all_money").innerText);
+
+
+                //改变原来的三个数值
+                //1、改变积分
+                shopping_score = shopping_score + (new_number - number) * jifen;
+                //console.log(shopping_score)
+                document.getElementById("shopping_scores").innerText = shopping_score;
+                //2、改变节省金额
+                save_money = save_money + (new_number - number) * (old_price - dangdang_price);
+                document.getElementById("save_money").innerText = save_money.toFixed(2);
+                //3、改变总金额
+                all_money = all_money + dangdang_price * (new_number - number);
+                document.getElementById("all_money").innerText = all_money.toFixed(2);
+                console.log(dangdang_price * (new_number - number));
+
+
+
+
+            }
+
+            //实现删除功能
+            function deleteRow(t) {
+                if (confirm("确实删除这行数据么?")) {
+
+                    //获取原来的三个数值
+                    var save_money = parseFloat(document.getElementById("save_money").innerText);
+                    var shopping_score = parseInt(document.getElementById("shopping_scores").innerText);
+                    var all_money = parseFloat(document.getElementById("all_money").innerText);
+
+                    var childs = t.parentNode.parentNode.children;
+                    var jifen = parseInt(childs[1].firstElementChild.innerHTML);
+                    var old_price = parseFloat(childs[2].firstElementChild.innerHTML);
+                    var dangdang_price = parseFloat(childs[3].firstElementChild.innerHTML);
+                    var counts = parseInt(childs[4].firstElementChild.value);
+
+                    //改变原来的三个数值
+                    //1、改变积分
+                    shopping_score = shopping_score - jifen * counts;
+                    document.getElementById("shopping_scores").innerText = shopping_score;
+                    //2、改变节省金额
+
+
+                    save_money = save_money - (old_price - dangdang_price) * counts;
+                    document.getElementById("save_money").innerText = save_money.toFixed(2);
+                    //3、改变总金额
+                    all_money = all_money - dangdang_price * counts;
+                    document.getElementById("all_money").innerText = all_money.toFixed(2);
+
+                    //   删除这一行
+                    t.parentNode.parentNode.parentNode.removeChild(t.parentNode.parentNode);
+
+
+
+
+                }
+
+            }
+        </script>
+    </body>
+
+    </html>

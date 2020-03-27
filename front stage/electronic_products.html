@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>电子产品</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+            /*border: 1px solid red;*/
+        }
+        iframe{
+            border: none;
+        }
+        .header{
+            width: 1081px;
+            height: 151px;
+        }
+        #header{
+            width: 1081px;
+            height: 151px;
+            margin: 0 auto;
+        }
+        .main{
+            width: 978px;
+            height: 600px;
+            background-image: url("../images/list_bg.gif");
+            background-repeat: no-repeat;
+            margin: -11px auto;
+        }
+        .main table tr{
+            height: 100px;
+        }
+        #tr1{
+            height: 50px;
+        }
+        #tr2{
+            height: 40px;
+            border-bottom: 1px dashed gray;
+        }
+        .main table tr td{
+            text-align: center;
+            font-size: 12px;
+            border-bottom: 1px dashed gray;
+        }
+        #td1{
+            width: 180px;
+            font-size: 16px;
+        }
+        #td2{
+            width: 220px;
+            font-size: 16px;
+        }
+        #td3{
+            width: 470px;
+            font-size: 16px;
+        }
+        #td4{
+            width: 100px;
+            font-size: 16px;
+        }
+        .footer{
+            width: 986px;
+            height: 140px;
+        }
+        #footer{
+            width: 986px;
+            height: 150px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<section id="header"><iframe class="header" src="header.html"></iframe></section>
+<section class="main">
+    <table>
+        <tr id="tr1"></tr>
+        <tr id="tr2">
+            <td id="td1"><label><input type="checkbox" onclick="getAll()"><b>全选</b></label></td>
+            <td id="td2"><b>商品图片</b></td>
+            <td id="td3"><b>商品名称/出售者/联系方式</b></td>
+            <td id="td4"><b>价格</b></td>
+        </tr>
+        <tr>
+            <td><label><input type="checkbox"></label></td>
+            <td><img src="../images/list1.jpg"></td>
+            <td>杜比环绕，家庭影院必备，超真实享受<br/><br/>
+                出售者：ling112233<br/><br/>
+                <img src="../images/contactme.gif">&nbsp;<img src="../images/addfav.gif">收藏</td>
+            <td>一口价：<br/><br/>
+                2833.0<br/><br/><br/><br/></td>
+        </tr>
+        <tr>
+            <td><label><input type="checkbox"></label></td>
+            <td><img src="../images/list2.jpg"></td>
+            <td>NVIDIA&nbsp;9999GT&nbsp;512MB&nbsp;256bit极品显卡，不容错过<br/><br/>
+                出售者：aipiaopiao110<br/><br/>
+                <img src="../images/contactme.gif">&nbsp;<img src="../images/addfav.gif">收藏</td>
+            <td>一口价：<br/><br/>
+                2460.0<br/><br/><br/><br/></td>
+        </tr>
+        <tr>
+            <td><label><input type="checkbox"></label></td>
+            <td><img src="../images/list3.jpg"></td>
+            <td>精品热卖：高清晰，30寸等离子电视<br/><br/>
+                出售者：阳光的挣扎<br/><br/>
+                <img src="../images/contactme.gif">&nbsp;<img src="../images/addfav.gif">收藏</td>
+            <td>一口价：<br/><br/>
+                18880.0<br/><br/><br/><br/></td>
+        </tr>
+        <tr>
+            <td><label><input type="checkbox"></label></td>
+            <td><img src="../images/list4.jpg"></td>
+            <td>Sony索尼家用最新款笔记本<br/><br/>
+                出售者：疯狂的镜无<br/><br/>
+                <img src="../images/contactme.gif">&nbsp;<img src="../images/addfav.gif">收藏</td>
+            <td>一口价：<br/><br/>
+                5889.0<br/><br/><br/><br/></td>
+        </tr>
+    </table>
+</section>
+<section id="footer"><iframe class="footer" src="footer.html"></iframe></section>
+</body>
+<script type="text/javascript">
+    var checkboxes = document.getElementsByTagName('input');
+    function check() {
+        for (var i = 1; i < checkboxes.length; i++) {
+            if (!checkboxes[i].checked) {//如果有没被选中的返回false
+                return false;
+            }
+        }
+        return true;//否则返回true
+    }
+    function getAll(){
+        if (!check()) {
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = true;
+            }
+        } else {
+            for (var j = 0; j < checkboxes.length; j++) {
+                checkboxes[j].checked = false;
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>登录</title>
+    <meta charset="utf-8">
+    <script src="../jquery.js"></script>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            /*border: 1px solid red;*/
+        }
+        
+        iframe {
+            border: none;
+        }
+        
+        .header {
+            width: 1081px;
+            height: 151px;
+        }
+        
+        #header {
+            width: 1081px;
+            height: 151px;
+            margin: 0 auto;
+        }
+        
+        .main {
+            width: 977px;
+            height: 500px;
+            background-image: url("../images/login_bg.gif");
+            background-repeat: no-repeat;
+            margin: -11px auto;
+        }
+        
+        .main_left {
+            width: 520px;
+            height: 450px;
+            float: left;
+            margin-top: 50px;
+            border-right: 1px solid gray;
+        }
+        
+        .main_left_top {
+            background-image: url("../images/logintitle.gif");
+            width: 150px;
+            height: 52px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        
+        .main_left_center {
+            margin-top: 10px;
+            margin-left: 140px;
+            font-size: 13px;
+        }
+        
+        .main_left_center tr {
+            height: 40px;
+        }
+        
+        #username {
+            width: 120px;
+        }
+        
+        #pwd {
+            width: 120px;
+        }
+        
+        .login {
+            background-image: url("../images/login.gif");
+            width: 78px;
+            height: 33px;
+            border: 0;
+            margin-left: 20px;
+        }
+        
+        .main_left_bottom {
+            margin-top: 20px;
+            margin-left: 90px;
+        }
+        
+        .main_left_bottom p {
+            height: 30px;
+            font-size: 13px;
+        }
+        
+        .main_right {
+            width: 453px;
+            height: 500px;
+            float: right;
+        }
+        
+        .register {
+            margin-top: 70px;
+            margin-left: 20px;
+        }
+        
+        .main_right dl {
+            height: 50px;
+        }
+        
+        #dl1 {
+            margin-top: 10px;
+        }
+        
+        #dl4 {
+            height: 40px;
+        }
+        
+        .main_right dd {
+            line-height: 33px;
+            font-size: 13px;
+        }
+        
+        span {
+            color: #1e8cff;
+            font-weight: bold;
+        }
+        
+        .pic1 {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: -1px -123px;
+            width: 35px;
+            height: 33px;
+            float: left;
+            margin-left: 46px;
+            margin-right: 3px;
+        }
+        
+        .pic2 {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: 0 -166px;
+            width: 24px;
+            height: 30px;
+            float: left;
+            margin-left: 46px;
+            margin-right: 14px;
+        }
+        
+        .pic3 {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: 0 -207px;
+            width: 29px;
+            height: 24px;
+            float: left;
+            margin-left: 46px;
+            margin-right: 10px;
+        }
+        
+        .pic4 {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: 0 -242px;
+            width: 27px;
+            height: 30px;
+            float: left;
+            margin-left: 46px;
+            margin-right: 12px;
+        }
+        
+        .pic5 {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: -20px -283px;
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-top: 5px;
+            margin-left: 25px;
+            margin-right: 1px;
+        }
+        
+        .pic6 {
+            background-image: url("../images/icon.gif");
+            background-repeat: no-repeat;
+            background-position: -22px -324px;
+            width: 15px;
+            height: 16px;
+            float: left;
+            margin-top: 7px;
+            margin-left: 25px;
+            margin-right: 3px;
+        }
+        
+        .reg {
+            background-image: url("../images/registernow.gif");
+            width: 157px;
+            height: 35px;
+            border: 0;
+            margin-left: 120px;
+        }
+        
+        .section1 {
+            width: 300px;
+            height: 78px;
+            background-color: #fdffe2;
+            margin-top: 10px;
+            margin-left: 50px;
+            border: 1px solid burlywood;
+        }
+        
+        .section2 {
+            width: 260px;
+            height: 25px;
+            background-color: #fbfffd;
+            margin-top: 10px;
+            margin-left: 20px;
+            border: 1px solid #ded3b1;
+        }
+        
+        .section1 dl dd {
+            margin-top: -3px;
+        }
+        
+        .section3 {
+            width: 260px;
+            height: 25px;
+            background-color: #fbfffd;
+            margin-top: 4px;
+            margin-left: 20px;
+            border: 1px solid #ded3b1;
+        }
+        
+        .footer {
+            width: 986px;
+            height: 140px;
+        }
+        
+        #footer {
+            width: 986px;
+            height: 150px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header"><iframe class="header" src="header.html"></iframe></section>
+    <section class="main">
+        <aside class="main_left">
+            <section class="main_left_top"></section>
+            <section class="main_left_center">
+                <form>
+                    <table>
+                        <tr>
+                            <td><label for="username">会员名：</label></td>
+                            <td><label><input type="text" id="username" value="" pattern="\w+" required="">（可包含a-z、0-9和下划线）</label></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pwd">密&nbsp;&nbsp;码：</label></td>
+                            <td><label><input type="password" id="pwd" value="" pattern="\w{6,}?" required="">（至少包含6个字符）</label></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input class="login" id="bth" type="" value=""></td>
+                        </tr>
+                    </table>
+                </form>
+            </section>
+            <section class="main_left_bottom">
+                <p>&delta;<a href="#">什么是安全登录</a>。</p>
+                <p>&delta;香港會員（繁體中文用戶）由此<a href="#">登入</a></p>
+                <p>&delta;<a href="#">密码安全贴士。</a></p>
+                <p>&delta;防止病毒或者木马窃取您的账户信息，<a href="#">在线检查</a>您的电脑是否安全。</p>
+            </section>
+        </aside>
+        <aside class="main_right">
+            <section>
+                <section class="register"><img src="../images/register.gif"></section>
+                <dl id="dl1">
+                    <dt class="pic1"></dt>
+                    <dd><span>便宜有好货！</span>超过7000万件商品任您选。</dd>
+                </dl>
+                <dl>
+                    <dt class="pic2"></dt>
+                    <dd><span>买卖更安全！</span>交易超安全。</dd>
+                </dl>
+                <dl>
+                    <dt class="pic3"></dt>
+                    <dd><span>免费开网店！</span>轻松赚钱交友。</dd>
+                </dl>
+                <dl id="dl4">
+                    <dt class="pic4"></dt>
+                    <dd><span>超人气社区！</span>精彩活动每一天。</dd>
+                </dl>
+            </section>
+            <section><label><input class="reg" type="submit" value=""></label></section>
+            <section class="section1">
+                <section class="section2">
+                    <dl>
+                        <dt class="pic5"></dt>
+                        <dd>您已经是会员？<a href="#">由此登入</a></dd>
+                    </dl>
+                </section>
+                <section class="section3">
+                    <dl>
+                        <dt class="pic6"></dt>
+                        <dd>繁体中文用户由此<a href="#">注册</a></dd>
+                    </dl>
+                </section>
+            </section>
+        </aside>
+    </section>
+    <section id="footer"><iframe class="footer" src="footer.html"></iframe></section>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

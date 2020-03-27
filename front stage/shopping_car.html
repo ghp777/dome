@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>购物车</title>
+    <meta charset="utf-8">
+    <script src="../jquery.js"></script>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            /*border: 1px solid red;*/
+        }
+        
+        iframe {
+            border: none;
+        }
+        
+        .header {
+            width: 1081px;
+            height: 151px;
+        }
+        
+        #header {
+            width: 1081px;
+            height: 151px;
+            margin: 0 auto;
+        }
+        
+        .main {
+            width: 978px;
+            height: 385px;
+            font-size: 14px;
+            margin: -13px auto;
+        }
+        
+        .main ul li {
+            list-style-type: none;
+        }
+        
+        .pic1 {
+            background-image: url("../images/buy_headpic1.gif");
+            width: 980px;
+            height: 32px;
+            margin-top: 20px;
+        }
+        
+        .word1 {
+            margin-top: -25px;
+            margin-left: 60px;
+        }
+        
+        .table1 {
+            margin-left: 20px;
+        }
+        
+        .table1 tr {
+            height: 24px;
+        }
+        
+        .table1 tr td span {
+            color: red;
+        }
+        
+        #tr1 {
+            height: 14px;
+        }
+        
+        .tr1 {
+            font-weight: bold;
+        }
+        
+        .td1 {
+            width: 380px;
+        }
+        
+        .td2 {
+            width: 110px;
+        }
+        
+        .td3 {
+            width: 112px;
+        }
+        
+        .td4 {
+            width: 114px;
+        }
+        
+        .td5 {
+            width: 160px;
+        }
+        
+        .td6 {
+            width: 50px;
+        }
+        
+        .td7 {
+            text-align: center;
+        }
+        
+        .input1 {
+            width: 110px;
+        }
+        
+        .pic2 {
+            background-image: url("../images/buy_headpic1.gif");
+            width: 980px;
+            height: 32px;
+            margin-top: 6px;
+        }
+        
+        .table2 {
+            margin-left: 110px;
+        }
+        
+        .table2 tr {
+            height: 24px;
+        }
+        
+        .input2 {
+            width: 30px;
+        }
+        
+        .input3 {
+            width: 100px;
+        }
+        
+        .input4 {
+            width: 30px;
+        }
+        
+        #tr2 {
+            height: 20px;
+        }
+        
+        #td1 {
+            width: 30px;
+        }
+        
+        #td2 {
+            width: 400px;
+        }
+        
+        .submit {
+            background-image: url("../images/submit.gif");
+            background-repeat: no-repeat;
+            width: 80px;
+            height: 34px;
+            border: 0;
+            margin-top: 2px;
+        }
+        
+        .footer {
+            width: 986px;
+            height: 140px;
+        }
+        
+        #footer {
+            width: 986px;
+            height: 150px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header"><iframe class="header" src="header.html"></iframe></section>
+    <section class="main">
+        <ul>
+            <li><img src="../images/mycart.gif"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全场运费一律2元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简易计算器</b></li>
+            <li class="pic1"></li>
+            <li class="word1"><b>确认商品价格与交易条件</b></li>
+        </ul>
+        <table class="table1">
+            <tr id="tr1"></tr>
+            <tr class="tr1">
+                <td class="td1">商品名</td>
+                <td class="td2">原价</td>
+                <td class="td3">优惠价</td>
+                <td class="td4">打折</td>
+                <td class="td5">数量</td>
+                <td class="td6">删除</td>
+            </tr>
+            <tr class="tr">
+                <td></td>
+                <td>￥</td>
+                <td><span>￥</span></td>
+                <td></td>
+                <td><label><input class="input1" type="number" onfocus="getOldCounts(this)" onchange="countThree(this)" value="1" pattern="\d*"></label></td>
+                <td onclick="deleteRow(this)">删除</td>
+            </tr>
+            <tr class="tr">
+                <td></td>
+                <td>￥</td>
+                <td><span>￥</span></td>
+                <td></td>
+                <td><label><input class="input1" type="number" onfocus="getOldCounts(this)" onchange="countThree(this)"  value="1" pattern="\d*"></label></td>
+                <td onclick="deleteRow(this)">删除</td>
+            </tr>
+            <tr class="tr">
+                <td></td>
+                <td>￥</td>
+                <td><span>￥</span></td>
+                <td></td>
+                <td><label><input class="input1" type="number" onfocus="getOldCounts(this)" onchange="countThree(this)"  value="1" pattern="\d*"></label></td>
+                <td onclick="deleteRow(this)">删除</td>
+            </tr>
+            <tr>
+                <td>继续挑选商品</td>
+                <td colspan="2" class="td7"> 总金额￥<span class="prices"> 994</span></td>
+                <td colspan="3">你共节省： ￥<span class="saves">348.60</span> </td>
+            </tr>
+
+        </table>
+        <ul>
+            <li class="pic2"></li>
+            <li class="word1">补充您的邮件地址和联系人基本信息</li>
+        </ul>
+        <form>
+            <table class="table2">
+                <tr id="tr2"></tr>
+                <tr>
+                    <td id="td1">收件人：</td>
+                    <td id="td2"><label><input type="text" required=""></label></td>
+                </tr>
+                <tr>
+                    <td>地&nbsp;&nbsp;址：</td>
+                    <td><select id="province">
+			<option value="-1">请选择/省</option>
+          
+		</select>
+                        <select id="city">
+			<option value="-1">请选择/市</option>
+		</select>
+                        <select id="area">
+			<option value="-1">请选择/区</option>
+		</select></td>
+                </tr>
+                <tr>
+                    <td>电&nbsp;&nbsp;话：</td>
+                    <td><label><input class="input2" type="text" required=""></label>-<label><input class="input3" type="text" required=""></label>-<label><input class="input4" type="text" required=""></label>（区号-电话号码-分机）</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input class="submit" type="submit" value=""></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <section id="footer"><iframe class="footer" src="footer.html"></iframe></section>
+    <script src="../js/shopping_car.js">
+    </script>
+</body>
+
+</html>
